@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf8">
+	<script type="text/javascript" src="C:/Users/buxy__000/Desktop/node-serialport/js/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+	function string_to_arr(str)
+	{
+		var res =[];
+		var j = 0;
+		for(var i=0;i<str.length;i++)
+		{
+			if(i%2 == 0)
+			{
+				res[j] = "0x"+str[i]+str[i+1];
+				j++;
+			}
+		}
+		return res;
+	}
+</script>
+<script type="text/javascript">
+$(function()
+{
+	$('#bnt').click(function()
+	{
+		var string = document.getElementById('info').value;
+		alert(string);
+		document.getElementById('msg').value = string_to_arr(string);
+	})
+})
+	
+</script>
+</head>
+<body>
+输入字符串:<input type="text" id="info" value="">
+<br/>
+<br/>
+转换结果:<input type="text" id="msg">
+<input type="button" id="bnt" value="确认">
+</body>
+</html>
